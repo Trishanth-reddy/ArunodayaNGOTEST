@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background-color: #ff7676;
+    color: white;
+    padding: 60px 0;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.newsletter .send-btn {
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.newsletter .send-btn:hover {
+    background-color: #4b5563;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-details a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: #ff7676;
+}
+
+.qr-code img {
+    max-width: 200px;
+    height: auto;
+}
+
+.addresses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.address h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.address p {
+    margin-bottom: 15px;
+}
+
+.map {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .newsletter form {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .addresses {
+        grid-template-columns: 1fr;
+    }
+
+    .map {
+        height: 250px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe Newsletter</h2>
+            <p>Sign up for our yearly newsletter to get the latest news, volunteer opportunities.</p>
+            <form id="newsletterForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Enter Your Email Address" required>
+                <button type="submit" class="send-btn">SEND</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Get in touch</h2>
+            
+            <div class="contact-info">
+                <div class="contact-details">
+                    <p>
+                        <a href="mailto:venkat@arunodaya.org">venkat@arunodaya.org</a><br>
+                        <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a>
+                    </p>
+                    <p>040 27981250, 27981251</p>
+                    <p>+91 90321 88999, 80969 50551</p>
+                </div>
+
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com" alt="QR Code">
+                </div>
+            </div>
+
+            <div class="addresses">
+                <div class="address">
+                    <h3>TELANGANA ADDRESS</h3>
+                    <p>
+                        Telangana : 1-4/7,Road No - 2, Ex Service Men Colony, Balaji Nagar,<br>
+                        Jawahar Nagar Municipal Corporation, Kapra Mandal, Medchal District<br>
+                        Secunderabad - 500087.
+                    </p>
+                    <p>
+                        Email: <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a>,<br>
+                        <a href="mailto:venkat@arunodaya.org">venkat@arunodaya.org</a>
+                    </p>
+                    <p>Landline : 040-27981250, 27981251</p>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9726882632447!2d78.5559!3d17.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9c4a45555555%3A0x55555555555555!2sBalaji%20Nagar%2C%20Kapra%2C%20Secunderabad%2C%20Telangana%20500087!5e0!3m2!1sen!2sin!4v1635835330921!5m2!1sen!2sin"
+                        class="map"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="address">
+                    <h3>ANDHRA PRADESH ADDRESS</h3>
+                    <p>
+                        Andhra Pradesh : #5-98-50/1, 3rd Floor, Hotel Viceroy Complex,<br>
+                        Main Road Brodipet, Guntur- 522 002.
+                    </p>
+                    <p>Landline : 0863 2236999</p>
+                    <p>Mobile : +91 80969 50550</p>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.547545371544!2d80.4359!3d16.3037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f227ebf44444%3A0x44444444444444!2sBrodipet%2C%20Guntur%2C%20Andhra%20Pradesh%20522002!5e0!3m2!1sen!2sin!4v1635835330921!5m2!1sen!2sin"
+                        class="map"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+    const newsletterForm = document.getElementById('newsletterForm');
+
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        
+        // Here you would typically send this data to your server
+        console.log('Newsletter submission:', { name, email });
+        
+        // Clear the form
+        newsletterForm.reset();
+        
+        // Show success message
+        alert('Thank you for subscribing to our newsletter!');
+    });
+});
+    </script>
+</body>
+</html>

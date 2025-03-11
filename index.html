@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arunodaya Trust</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    .top-bar {
+      background-color: #67d5cc;
+      color: #333;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-info a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #333;
+      font-size: 18px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #ff7a7a;
+      color: white;
+      border: none;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid #333;
+      color: #333;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      padding: 40px 0;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .image-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-placeholder {
+      background-color: #eee;
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ddd;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .image-dimensions {
+      position: absolute;
+      background-color: #0088cc;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 14px;
+      margin-top: 130px;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #ddd;
+      margin: 40px 0;
+      border: none;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .section-content {
+        flex-direction: column;
+      }
+      
+      .image-container {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-info {
+        display: none;
+      }
+      
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .logo h1 {
+        font-size: 20px;
+      }
+      
+      .section-title {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .social-icons {
+        display: none;
+      }
+      
+      .logo img {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .nav-links .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <a href="tel:04027981250,27981251"><i class="fas fa-phone"></i> 040-27981250,27981251</a>
+        <a href="mailto:arunodayatrust2008@gmail.com"><i class="fas fa-envelope"></i> arunodayatrust2008@gmail.com</a>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="/api/placeholder/80/80" alt="Arunodaya Trust Logo">
+        <h1>Arunodaya Trust</h1>
+      </div>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Our Core Team</a>
+        <a href="#">Media Coverage</a>
+        <a href="#" class="btn btn-primary">GET INVOLVED</a>
+        <a href="#" class="btn btn-primary">DONATE</a>
+        <a href="#"><i class="fas fa-user"></i> Login</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Mission Section -->
+      <div class="section">
+        <h2 class="section-title">MISSION</h2>
+        <div class="section-content">
+          <div class="text-content">
+            <p>Lorem ipsum is simply dummy text of the printin typesetting dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <br>
+            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book. essentially.</p>
+          </div>
+          <div class="image-container">
+            <div class="image-placeholder">
+              IMAGE
+              <span class="image-dimensions">708 × 582</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Vision Section -->
+      <div class="section">
+        <h2 class="section-title">VISION</h2>
+        <div class="section-content">
+          <div class="text-content">
+            <p>Lorem ipsum is simply dummy text of the printin typesetting dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <br>
+            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book. essentially.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value Section -->
+      <div class="section">
+        <div class="section-content">
+          <div class="image-container">
+            <div class="image-placeholder">IMAGE</div>
+          </div>
+          <div class="text-content">
+            <h2 class="section-title">VALUE</h2>
+            <p>Lorem ipsum is simply dummy text of the printin typesetting dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <br>
+            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book. essentially.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Motto Section -->
+      <div class="section">
+        <div class="text-content">
+          <h2 class="section-title">MOTTO</h2>
+          <p>Lorem ipsum is simply dummy text of the printin typesetting dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <br>
+          <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book. essentially.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu functionality
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

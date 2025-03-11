@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunodaya Trust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+    :root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFB84C;
+    --text-color: #333;
+    --light-gray: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Top Bar */
+.at-top-bar {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.at-contact-info span {
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.at-contact-info i {
+    color: #666;
+    margin-right: 5px;
+}
+
+.at-social-icons a {
+    color: #666;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.at-social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation */
+.at-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.at-logo {
+    display: flex;
+    align-items: center;
+}
+
+.at-logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.at-logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.at-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.at-nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.at-nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.at-nav-links a.active {
+    color: var(--primary-color);
+}
+
+.at-nav-links button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.at-nav-links button:hover {
+    transform: translateY(-2px);
+}
+
+.at-get-involved {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.at-donate {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.at-login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.at-login:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.at-hero {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.at-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.at-hero:hover img {
+    transform: scale(1.05);
+}
+
+/* Projects Section */
+.at-projects {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.at-projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.at-highlight {
+    color: var(--accent-color);
+}
+
+.at-project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.at-card {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-bottom: 1.5px solid var(--primary-color);
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.at-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.at-card i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.at-card:hover i {
+    transform: scale(1.1);
+}
+
+.at-card h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.5em;
+}
+
+.at-know-more {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.at-know-more::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: black;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.at-know-more:hover::after {
+    transform: scaleX(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .at-nav-links {
+        gap: 15px;
+    }
+
+    .at-hero {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .at-top-bar {
+        padding: 8px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .at-contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .at-contact-info span {
+        margin-right: 0;
+    }
+
+    .at-nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .at-logo {
+        margin-bottom: 10px;
+    }
+
+    .at-nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .at-nav-links button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .at-login {
+        margin-top: 10px;
+    }
+
+    .at-hero {
+        height: 400px;
+    }
+
+    .at-projects h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .at-top-bar {
+        padding: 8px 10px;
+    }
+
+    .at-social-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .at-social-icons a {
+        margin-left: 0;
+    }
+
+    .at-nav {
+        padding: 10px;
+    }
+
+    .at-logo img {
+        height: 40px;
+    }
+
+    .at-logo span {
+        font-size: 1.2rem;
+    }
+
+    .at-hero {
+        height: 300px;
+    }
+
+    .at-projects {
+        padding: 30px 10px;
+    }
+
+    .at-projects h2 {
+        font-size: 1.8em;
+    }
+
+    .at-card {
+        padding: 20px;
+    }
+
+    .at-card h3 {
+        font-size: 1.3em;
+    }
+}
+.at-red{
+    color:var(--primary-color)
+}
+
+
+
+        /* About section */
+        .about {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .about-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .about-video {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eee;
+            min-height: 300px;
+        }
+
+        .about-buttons {
+            margin-top: 20px;
+        }
+
+        .about-btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .know-more-btn {
+            background-color: #FF6B6B;
+            color: white;
+        }
+
+        .goals-btn {
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        /* Chairman section */
+        .chairman {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .chairman-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin: 0 auto 30px;
+        }
+
+        .chairman-text {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Icons placeholder */
+        .icon-placeholder {
+            display: inline-block;
+            text-align: center;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: #FF6B6B;
+            margin-bottom: 10px;
+        }
+
+        /* Impact section */
+        .impact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .impact-container {
+            max-width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Core Team section */
+        .core-team {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .team-title {
+            color: #FF6B6B;
+            margin-bottom: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .team-member {
+            width: 150px;
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .team-description {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Gallery section */
+        .gallery {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .gallery-title {
+            color: #FFA500;
+            margin-bottom: 40px;
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        .gallery-item {
+            background-color: #eee;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            position: relative;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        .view-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* CSR Partners section */
+        .csr-partners {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .partners-title {
+            color: #FFA500;
+            margin-bottom: 40px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .partners-container {
+            display: flex;
+            width: max-content; /* Ensure the container is wide enough to hold all logos */
+            animation: scroll 20s linear infinite; /* Adjust the duration as needed */
+        }
+
+        .partner-logo {
+            width: 100px;
+            height: 50px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            margin-right: 10px; /* Add spacing between logos */
+            flex-shrink: 0; /* Prevent logos from shrinking */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move the container by half its width */
+            }
+        }
+
+        /* Milestones section */
+        .milestones {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        .milestones h1 {
+            color: #F4A500;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 0;
+        }
+
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            background: black;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2.5px;
+            z-index: 0;
+        }
+
+        .milestone {
+            position: relative;
+            background: white;
+            width: 45%;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        .left {
+            align-self: flex-start;
+            text-align: right;
+        }
+
+        .right {
+            align-self: flex-end;
+            text-align: left;
+        }
+
+        .milestone::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: red;
+            border: 3px solid white;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+
+            .milestone {
+                width: 80%;
+                text-align: left;
+                margin-left: 40px;
+            }
+
+            .milestone::after {
+                left: -30px;
+            }
+
+            .left, .right {
+                align-self: center;
+                text-align: left;
+            }
+
+            .left::after, .right::after {
+                left: -30px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .milestone {
+                width: 90%;
+                margin-left: 20px;
+            }
+
+            .milestone::after {
+                left: -25px;
+            }
+        }
+        .nl-container {
+            position: relative;
+            width: 90%;
+            max-width: 1100px;
+            height: 300px;
+            background: url('image.png') center/cover no-repeat;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        .nl-overlay {
+            background-image: url("https://s3-alpha-sig.figma.com/img/e1b6/34db/8c1768e04fd269ba9b2dd82186be723c?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sIhzQFeuybbfAdT978KVQNwkzrVCjr-72esTLNxwaeCeSk2f0llIL4oAp0EGUrzusSF0sG0-CcV6-sdj8M51eMyCLajOO0XvxiS1Qt4JECUhQzkPJKaUqddm3qVC-6CveZ2T7LLAPi7fNHTlfsqc~NoTm4gZ3ghiJNHdbeHU6H~~3FtTGOb6o0QJ71sUiEfN2LqMtoirY2tvtZ9HmM-YFxnBo-UWk8-iCvm5kSvQf5SyudFqdlQPrwfBaoE3L67ws5UT9jm46JBHdtiJi4xrJo6ILNech9SZEUBMu8iwetcASnLgjR7wd6FWQ~W8TWG5Moq39R-axrIsuj8bT0DPcA__");
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0, 0, 0, 0.4); */
+        }
+
+        .nl-content {
+            position: relative;
+            color: white;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        .nl-text {
+            max-width: 50%;
+        }
+
+        .nl-form-container {
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nl-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nl-input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .nl-input-group {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .nl-input-group .nl-input {
+            flex: 1;
+        }
+
+        .nl-button {
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1c1c1c;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            width: auto;
+            white-space: nowrap;
+        }
+
+        .nl-button:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .nl-container {
+                flex-direction: column;
+                height: auto;
+                padding: 30px;
+            }
+
+            .nl-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nl-text {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .nl-form-container {
+                max-width: 100%;
+                align-items: center;
+            }
+
+            .nl-form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nl-input-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nl-button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        /* Contact Section Styles */
+        .contact-container {
+            margin: 20px auto;
+            max-width: 1100px;
+            padding: 20px;
+        }
+
+        .contact-map {
+            height: 250px;
+            width: 100%;
+        }
+
+        .contact-qr-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="at-top-bar">
+            <div class="at-contact-info">
+                <span><i class="fas fa-phone"></i> 040-27981250,27981251</span>
+                <span><i class="fas fa-envelope"></i> arunodayatrust2008@gmail.com</span>
+            </div>
+            <div class="at-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <nav class="at-nav">
+            <div class="at-logo">
+                <img src="placeholder-logo.png" alt="Arunodaya Trust">
+            </div>
+            <div class="at-nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Our Core Team</a>
+                <a href="#">Media Coverage</a>
+                <button class="at-get-involved">GET INVOLVED</button>
+                <button class="at-donate">DONATE</button>
+                <div class="at-login">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="at-hero">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=80" alt="Happy Children">
+    </section>
+
+    <section class="at-projects">
+        <h2><span class="at-highlight">OUR</span> <span class="at-red">PROJECTS</span></h2>
+        <div class="at-project-cards">
+            <div class="at-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>EDUCATION</h3>
+                <a href="#" class="at-know-more">Know More</a>
+            </div>
+            <div class="at-card">
+                <i class="fas fa-heart-pulse"></i>
+                <h3>HEALTH</h3>
+                <a href="#" class="at-know-more">Know More</a>
+            </div>
+            <div class="at-card">
+                <i class="fas fa-hands-holding-child"></i>
+                <h3>SOCIAL CAUSES</h3>
+                <a href="#" class="at-know-more">Know More</a>
+            </div>
+            <div class="at-card">
+                <i class="fas fa-house-laptop"></i>
+                <h3>LIVELIHOODS</h3>
+                <a href="#" class="at-know-more">Know More</a>
+            </div>
+        </div>
+
+    <!-- About section -->
+    <section class="about">
+        <h2 class="section-title"><span class="at-highlight">ABOUT</span> <span class="at-red">US</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Lorem Ipsum is simply dummy text of the printin typesetting, dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book, essentially.</p>
+                <div class="about-buttons">
+                    <button class="about-btn know-more-btn">KNOW MORE</button>
+                    <button class="about-btn goals-btn">OUR GOALS</button>
+                </div>
+            </div>
+            <div class="about-video" style="background-color: grey;">
+                <h3>YOUTUBE VIDEO</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chairman's message -->
+    <section class="chairman">
+        <div class="chairman-img" style="background-color: grey;"></div>
+        <h2 class="section-title"><span class="at-highlight">CHAIRMAN'S</span> <span class="at-red">MESSAGE</span></h2>
+        <p class="chairman-text">Lorem Ipsum is simply dummy text of the printin typesetting, dummy text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+        <button class="read-more-btn">READ MORE</button>
+    </section>
+
+    <!-- Milestones section -->
+    <section class="milestones">
+        <h1>MILESTONES</h1>
+        <div class="timeline">
+            <div class="milestone left">
+                <h3>November 21, 2008</h3>
+                <p>Registered Under Trust Act 1882 Bearing No 20 of 2008 on 21.11.2008</p>
+            </div>
+            <div class="milestone right">
+                <h3>May 11, 2009</h3>
+                <p>Establishment of Arunodaya Orphan Home with 12 Children of HIV Infected & Affected Communities</p>
+            </div>
+            <div class="milestone left">
+                <h3>May 28, 2010</h3>
+                <p>Registered Under Income Tax 1961 Under Section 12A dated 28.05.2010 Initiated Mission Education & STeP supported by Smile Foundation, New Delhi</p>
+            </div>
+            <div class="milestone right">
+                <h3>August 4, 2011</h3>
+                <p>Registered under Income Trust Act 1961 Under Section 80G dated 04.08.2011. Inauguration of Ashirwad Feeding Program Supported by Hand of Hope, Hyderabad</p>
+            </div>
+            <div class="milestone left">
+                <h3>February 1, 2012</h3>
+                <p>Launching of Care & Support Program supporting 82 HIV Infected Families</p>
+            </div>
+            <div class="milestone right">
+                <h3>May 10, 2013</h3>
+                <p>Registered Under Foreign Contribution Regulation Act Dated 10.05.2013</p>
+            </div>
+            <div class="milestone left">
+                <h3>May 7, 2014</h3>
+                <p>Construction of Own Shelter Home providing Food, Clothing, Shelter, and Education to 40 Children and Training Centre</p>
+            </div>
+            <div class="milestone right">
+                <h3>November 1, 2015</h3>
+                <p>Selected as Best NGO in Shamirpet Mandal by the Newly Formed Telangana Government</p>
+            </div>
+            <div class="milestone left">
+                <h3>2016</h3>
+                <p>Pradhan Mantri Kaushal Vikas Yojana (PMKVY) Project</p>
+            </div>
+            <div class="milestone right">
+                <h3>June 1, 2016</h3>
+                <p>Establishment of New Skill Development Centre at Guntur, Andhra Pradesh</p>
+            </div>
+            <div class="milestone left">
+                <h3>2017</h3>
+                <p>SC Corporation Project, Govt of Andhra Pradesh</p>
+            </div>
+            <div class="milestone right">
+                <h3>2018</h3>
+                <p>Deen Dayal Upadhyaya Grameen Kaushalya Yojana (DDUGKY) Project</p>
+            </div>
+            <div class="milestone left">
+                <h3>2019</h3>
+                <p>Corporate Social Responsibility Project of Gland Pharma - Urban Ultra Poor Program</p>
+            </div>
+            <div class="milestone right">
+                <h3>2020</h3>
+                <p>Corporate Social Responsibility Project of Gland Pharma - COVID-19 Relief Distribution to 12,000 Families in 14 Mandals of Medchal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact section -->
+    <section class="impact">
+        <h2 class="section-title"><span>IM</span><span>PACT</span></h2>
+        <div class="impact-container">
+            <h3>Impact Metrics Will Be Displayed Here</h3>
+        </div>
+    </section>
+
+    <!-- Core Team section -->
+    <section class="core-team">
+        <h2 class="team-title">OUR CORE TEAM</h2>
+        <div class="team-members">
+            <div class="team-member">2</div>
+            <div class="team-member">1</div>
+            <div class="team-member">3</div>
+        </div>
+        <div class="team-description">
+            <p>Lorem Ipsum is simply dummy text of the printing typesetting industry text ever when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <span>•</span>
+            <span>•</span>
+            <span>•</span>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="gallery">
+        <h2 class="gallery-title">OUR GALLERY</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"></div>
+            <div class="gallery-item wide"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item tall"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+            <div class="gallery-item"></div>
+        </div>
+        <button class="view-more-btn">VIEW MORE</button>
+    </section>
+
+    <!-- CSR Partners section -->
+    <section class="csr-partners">
+        <h2 class="partners-title">CSR PARTNERS</h2>
+        <div class="carousel-wrapper">
+            <div class="partners-container" id="carousel">
+                <div class="partner-logo">Logo 1</div>
+                <div class="partner-logo">Logo 2</div>
+                <div class="partner-logo">Logo 3</div>
+                <div class="partner-logo">Logo 4</div>
+                <div class="partner-logo">Logo 5</div>
+                <div class="partner-logo">Logo 6</div>
+            </div>
+        </div>
+    </section>
+<!-- Newsletter Section -->
+<div class="nl-container">
+    <div class="nl-overlay"></div>
+    <div class="nl-content">
+        <div class="nl-text">
+            <h2>Subscribe <br> Newsletter</h2>
+            <p>Sign up for our yearly newsletter to get the latest news, volunteer opportunities.</p>
+        </div>
+        <div class="nl-form-container">
+            <form class="nl-form" id="newsletter-form">
+                <div style="display:flex; align-items:end;">
+                    <div>
+                        <input type="text" id="name" class="nl-input" placeholder="Your Name" required>
+                        <input type="email" id="email" class="nl-input" placeholder="Enter Your Email Address" required>
+                    </div>
+                    <div style="margin-bottom:8px;margin-left:5px">
+                        <button type="submit" class="nl-button">SEND</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact-container container my-4">
+    <div class="row">
+        <!-- Left Column (Contact Info & Address) -->
+        <div class="col-md-7">
+            <div style="margin-bottom:30px">
+                <h2>Get in touch</h2>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:venkat@arunoday.org">venkat@arunoday.org</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:04027981250">040-27981250</a>, <a href="tel:27981251">27981251</a></p>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:+919032188999">+91 90321 88999</a>, <a href="tel:+918096950551">80969 50551</a></p>
+            </div>
+
+            <div style="margin-bottom:30px">
+                <h3><i class="fas fa-map-marker-alt"></i> TELANGANA ADDRESS</h3>
+                <p>1-4/7, Road No - 2, Ex Service Men Colony, Balaji Nagar, Jawahar Nagar Municipal Corporation, Kapra Mandal, Medchal District, Secunderabad - 500087.</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a>, <a href="mailto:venkat@arunoday.org">venkat@arunoday.org</a></p>
+                <p><i class="fas fa-phone"></i> 040-27981250, 27981251</p>
+                <div id="map-telangana" class="contact-map"></div>
+            </div>
+
+            <div style="margin-bottom:30px">
+                <h3><i class="fas fa-map-marker-alt"></i> ANDHRA PRADESH ADDRESS</h3>
+                <p>#5-98-50/1, 3rd Floor, Hotel Viceroy Complex, Main Road Brodipet, Guntur - 522002.</p>
+                <p><i class="fas fa-phone"></i> 0863 2236999</p>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:+918096950550">+91 80969 50550</a></p>
+                <div id="map-andhra" class="contact-map"></div>
+            </div>
+        </div>
+
+        <!-- Right Column (QR Code) -->
+        <div class="col-md-5 d-flex flex-column align-items-center">
+            <div class="contact-qr-placeholder">QR Code Here</div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+         function initMap() {
+            // Telangana Map
+            var telanganaMap = L.map('map-telangana').setView([17.385, 78.4867], 10);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(telanganaMap);
+            L.marker([17.385, 78.4867]).addTo(telanganaMap).bindPopup('Telangana Location');
+
+            // Andhra Pradesh Map
+            var andhraMap = L.map('map-andhra').setView([16.3067, 80.4365], 10);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(andhraMap);
+            L.marker([16.3067, 80.4365]).addTo(andhraMap).bindPopup('Andhra Pradesh Location');
+        }
+
+        document.addEventListener("DOMContentLoaded", initMap);
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = document.getElementById("carousel");
+            const logos = Array.from(carousel.children);
+
+            // Duplicate logos for seamless scrolling
+            logos.forEach(logo => {
+                const clone = logo.cloneNode(true);
+                carousel.appendChild(clone);
+            });
+        });
+         // Add smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Add active class to current navigation item
+const navLinks = document.querySelectorAll('.at-nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+// Prevent image drag
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+});
+
+// Add smooth reveal animation for cards on scroll
+const cards = document.querySelectorAll('.at-card');
+const revealCards = () => {
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.8;
+
+        if (cardTop < triggerBottom) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
+    });
+};
+
+// Initialize cards
+cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'all 0.5s ease';
+});
+
+// Listen for scroll
+window.addEventListener('scroll', revealCards);
+// Initial check
+revealCards();
+    </script>
+</body>
+</html>

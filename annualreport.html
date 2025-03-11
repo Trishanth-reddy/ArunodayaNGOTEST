@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunodaya Trust</title>
+    <link rel="stylesheet" href="annualreports.css">
+    <script src="annualreports.html" defer></script>
+    <script src="https://kit.fontawesome.com/076947b954.js" crossorigin="anonymous"></script>
+<style>
+    :root {
+    --primary-color: #7DDCD9;
+    --secondary-color: #FF7171;
+    --text-color: #333;
+    --white: #fff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Contact Bar */
+.contact-bar {
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+}
+
+.contact-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.get-involved {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.donate {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content */
+.covid-section {
+    padding: 3rem 0;
+}
+
+.covid-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.image-card {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="contact-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:040-27981250,27981251"><i class="fa-solid fa-phone"></i>  040-27981250,27981251</a>
+                    <a href="mailto:arunodayatrust2008@gmail.com"> <i class="fa-solid fa-envelope"></i>  arunodayatrust2008@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo-section">
+                    <img src="https://placehold.co/50x50" alt="Arunodaya Trust Logo" class="logo">
+                    <h1>Arunodaya Trust</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="active">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Core Team</a>
+                    <a href="#">Media Coverage</a>
+                    <button class="btn get-involved">GET INVOLVED</button>
+                    <button class="btn donate">DONATE</button>
+                    <a href="#" class="login">Login</a>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="covid-section">
+            <h2>Annual Reports</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 1">
+                </div>
+                <div class="image-card">
+                    <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 2">
+                </div>
+                <div class="image-card">
+                    <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 3">
+                </div>
+                <div class="image-card">
+                    <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 4">
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
