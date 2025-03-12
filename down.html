@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunodaya Trust</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFB84C;
+            --text-color: #333;
+            --light-gray: #777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .at-top-bar {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .at-contact-info {
+            font-size: 14px;
+        }
+
+        .at-contact-info i {
+            margin-right: 5px;
+            color: #000;
+        }
+
+        .at-social-icons a {
+            color: #000;
+            margin-left: 15px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .at-social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Navbar */
+        .at-nav {
+            padding: 15px 50px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .at-logo img {
+            height: 60px;
+        }
+
+        .at-nav-links .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .at-nav-links .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .at-nav-links .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .at-nav-links button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .at-nav-links button:hover {
+            transform: translateY(-2px);
+        }
+
+        .at-get-involved {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .at-donate {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .at-login {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .at-login:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .at-top-bar {
+                padding: 8px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .at-contact-info {
+                margin-bottom: 10px;
+            }
+
+            .at-social-icons {
+                margin-top: 10px;
+            }
+
+            .at-nav {
+                padding: 10px 20px;
+            }
+
+            .navbar-toggler {
+                border: none;
+                background: none;
+            }
+
+            .navbar-toggler:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            .navbar-collapse {
+                text-align: center;
+                background: white;
+                padding: 10px;
+                border-radius: 10px;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 80px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+
+            .at-nav-links {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .at-nav-links .nav-link {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .at-nav-links button {
+                width: 100%;
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .at-login {
+                justify-content: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Top Bar -->
+        <div class="at-top-bar">
+            <div class="at-contact-info">
+                <span><i class="fas fa-phone"></i> 040-27981250,27981251</span>
+                <span><i class="fas fa-envelope"></i> arunodayatrust2008@gmail.com</span>
+            </div>
+            <div class="at-social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg at-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand at-logo" href="#">
+                    <img src="placeholder-logo.png" alt="Arunodaya Trust">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span><i class="fas fa-bars fa-lg"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto at-nav-links">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Our Core Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Media Coverage</a></li>
+                        <li class="nav-item"><button class="btn at-get-involved">GET INVOLVED</button></li>
+                        <li class="nav-item"><button class="btn at-donate">DONATE</button></li>
+                        <li class="nav-item">
+                            <div class="at-login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Login</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

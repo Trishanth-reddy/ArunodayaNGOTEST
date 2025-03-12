@@ -1,248 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        /* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Newsletter Section */
-.newsletter {
-    background-color: #ff7676;
-    color: white;
-    padding: 60px 0;
-}
-
-.newsletter h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.newsletter p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.newsletter form {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.newsletter input {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    flex: 1;
-    min-width: 200px;
-}
-
-.newsletter .send-btn {
-    background-color: #374151;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.newsletter .send-btn:hover {
-    background-color: #4b5563;
-}
-
-/* Contact Section */
-.contact {
-    padding: 60px 0;
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.contact-details a {
-    color: #333;
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    color: #ff7676;
-}
-
-.qr-code img {
-    max-width: 200px;
-    height: auto;
-}
-
-.addresses {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.address h3 {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.address p {
-    margin-bottom: 15px;
-}
-
-.map {
-    width: 100%;
-    height: 300px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .newsletter form {
-        flex-direction: column;
-    }
-    
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .addresses {
-        grid-template-columns: 1fr;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Timeline</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .map {
-        height: 250px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
     }
-}
-    </style>
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 80rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .header p {
+      font-size: 1.125rem;
+      color: #64748b;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    /* Timeline container */
+    .timeline-container {
+      width: 100%;
+      max-width: 90vw;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline-content {
+      position: relative;
+      height: 400px;
+      width: 3000px;
+      border-radius: 0.75rem;
+      background-color: #ffffff;
+      overflow-x: auto;
+      overscroll-behavior: contain;
+    }
+
+    /* Timeline path */
+    .timeline-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .timeline-path {
+      stroke: rgba(220, 38, 38, 0.5);
+      stroke-width: 3px;
+      fill: none;
+      stroke-dasharray: 8 8;
+      animation: dash-animation 60s linear infinite reverse;
+    }
+
+    /* Timeline markers */
+    .timeline-marker {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+
+    .timeline-marker.active {
+      z-index: 20;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .marker-glow {
+      position: absolute;
+      inset: -8px;
+      background-color: rgba(239, 68, 68, 0.2);
+      border-radius: 50%;
+      filter: blur(4px);
+      animation: pulse-gentle 3s infinite ease-in-out;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .timeline-marker.active .marker-glow {
+      opacity: 1;
+    }
+
+    .marker-svg {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      transition: all 0.3s;
+    }
+
+    .marker-circle {
+      fill: #f87171;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+    }
+
+    .marker-inner-circle {
+      fill: #ef4444;
+    }
+
+    .marker-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      pointer-events: none;
+    }
+
+    /* Timeline events */
+    .timeline-event {
+      position: absolute;
+      width: 240px;
+      transform: translateX(-50%);
+      transition: all 0.5s;
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+
+    .timeline-event.active {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .event-connector {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 20px;
+      background-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .event-connector.top {
+      top: 100%;
+    }
+
+    .event-connector.bottom {
+      bottom: 100%;
+    }
+
+    .event-card {
+      background-color: white;
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+    }
+
+    .event-date {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #ef4444;
+      margin-bottom: 0.25rem;
+    }
+
+    .event-description {
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #f2f2f2;
+        color: #f3f4f6;
+      }
+      
+      .header h1 {
+        color: #f3f4f6;
+      }
+      
+      .header p {
+        color: #9ca3af;
+      }
+      
+      .timeline-content {
+        background-color: #fff;
+      }
+      
+      .event-card {
+        background-color: #1f2937;
+        border-color: #374151;
+      }
+      
+      .event-description {
+        color: #d1d5db;
+      }
+    }
+
+    /* Animations */
+    @keyframes dash-animation {
+      to {
+        stroke-dashoffset: 1000;
+      }
+    }
+
+    @keyframes pulse-gentle {
+      0%, 100% {
+        opacity: 0.85;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Subscribe Newsletter</h2>
-            <p>Sign up for our yearly newsletter to get the latest news, volunteer opportunities.</p>
-            <form id="newsletterForm">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Enter Your Email Address" required>
-                <button type="submit" class="send-btn">SEND</button>
-            </form>
-        </div>
-    </section>
+  <div class="container">
+    <div class="header">
+      <h1>Project Timeline</h1>
+      <p>Our journey through time</p>
+    </div>
+    
+    <div class="timeline-container" id="timeline-container">
+      <div class="timeline-content" id="timeline-content">
+        <svg class="timeline-svg" id="timeline-svg">
+          <path id="timeline-path" class="timeline-path"></path>
+        </svg>
+        
+        <!-- Timeline markers and events will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const timelineData = [
+      {
+        id: "event-1",
+        date: "November 21, 2008",
+        title: "Adaptation Fund",
+        description: "Operationalizing the Adaptation Fund at COP14 following the Bali Action Plan",
+        x: 5,
+        y: 50
+      },
+      {
+        id: "event-2",
+        date: "May 11, 2009",
+        title: "Frameworks for Action",
+        description: "Implementation of integrated frameworks for adaptation planning & implementation",
+        x: 15,
+        y: 70
+      },
+      {
+        id: "event-3",
+        date: "May 28, 2010",
+        title: "Cancun Agreements",
+        description: "Establishment of the Cancun Adaptation Framework (CAF) which enhanced action on adaptation under the UNFCCC process",
+        x: 25,
+        y: 40
+      },
+      {
+        id: "event-4",
+        date: "August 5, 2011",
+        title: "National Support",
+        description: "Adoption of further guidance for Least Developed Countries (LDCs) on the formulation of National Adaptation Plans at COP17 to address medium/long-term adaptation",
+        x: 35,
+        y: 90
+      },
+      {
+        id: "event-5",
+        date: "February 1, 2012",
+        title: "Implementation Support",
+        description: "Establishment of the Adaptation Committee to promote implementation & support via coherent actions under the Convention",
+        x: 45,
+        y: 30
+      },
+      {
+        id: "event-6",
+        date: "May 10, 2013",
+        title: "Technical Processes",
+        description: "Technical Examination Process on Adaptation established under the Paris Agreement",
+        x: 55,
+        y: 50
+      },
+      {
+        id: "event-7",
+        date: "May 7, 2014",
+        title: "Global Framework",
+        description: "Launch of the Global Framework for Climate Services enabling better management of climate risks through development of science-based climate information",
+        x: 65,
+        y: 40
+      },
+      {
+        id: "event-8",
+        date: "November 1, 2016",
+        title: "Paris Entry into Force",
+        description: "The Paris Agreement enters into force, with a goal to enhance adaptive capacity & resilience to climate change",
+        x: 75,
+        y: 30
+      },
+      {
+        id: "event-9",
+        date: "June 1, 2018",
+        title: "Capacity Building",
+        description: "Launch of new Tech Network to assist developing countries with implementing adaptation priorities identified in NDCs & NAPs",
+        x: 85,
+        y: 70
+      },
+      {
+        id: "event-10",
+        date: "September 23, 2019",
+        title: "Global Summit",
+        description: "UN Climate Action Summit enhances national & sub-national adaptation commitments & finance",
+        x: 95,
+        y: 40
+      }
+    ];
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h2>Get in touch</h2>
-            
-            <div class="contact-info">
-                <div class="contact-details">
-                    <p>
-                        <a href="mailto:venkat@arunodaya.org">venkat@arunodaya.org</a><br>
-                        <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a>
-                    </p>
-                    <p>040 27981250, 27981251</p>
-                    <p>+91 90321 88999, 80969 50551</p>
-                </div>
-
-                <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com" alt="QR Code">
-                </div>
+    document.addEventListener('DOMContentLoaded', () => {
+      const timelineContainer = document.getElementById('timeline-container');
+      const timelineContent = document.getElementById('timeline-content');
+      const timelineSvg = document.getElementById('timeline-svg');
+      const timelinePath = document.getElementById('timeline-path');
+      
+      let activeEventId = null;
+      const visibleEvents = new Set();
+      
+      // Generate the SVG path
+      function generatePath() {
+        const width = timelineContent.scrollWidth;
+        const height = timelineContent.clientHeight;
+        
+        // Create a smooth wavy path
+        let path = `M 0,${height * 0.5}`;
+        const segments = 300;
+        const amplitude = height * 0.15;
+        
+        // Calculate the path width based on the last milestone position
+        const lastMilestonePosition = Math.max(...timelineData.map(event => event.x)) / 100 * width;
+        const pathWidth = Math.max(width, lastMilestonePosition * 1.05); // Add some padding
+        
+        for (let i = 0; i <= segments; i++) {
+          const progress = i / segments;
+          const x = pathWidth * progress;
+          const y = height * 0.5 + Math.sin(progress * Math.PI * 5) * amplitude;
+          path += ` L ${x},${y}`;
+        }
+        
+        timelinePath.setAttribute('d', path);
+      }
+      
+      // Create timeline markers and events
+      function createTimelineElements() {
+        timelineData.forEach((event, index) => {
+          // Create marker
+          const marker = document.createElement('div');
+          marker.className = 'timeline-marker';
+          marker.id = `marker-${event.id}`;
+          marker.style.left = `${event.x}%`;
+          marker.style.top = `${event.y}%`;
+          
+          marker.innerHTML = `
+            <div class="marker-glow"></div>
+            <svg class="marker-svg" viewBox="0 0 32 32">
+              <circle class="marker-circle" cx="16" cy="16" r="12"></circle>
+              <circle class="marker-inner-circle" cx="16" cy="16" r="6"></circle>
+            </svg>
+            <div class="marker-number">${index + 1}</div>
+          `;
+          
+          marker.addEventListener('click', () => {
+            setActiveEvent(event.id);
+          });
+          
+          // Create event card
+          const isTopPosition = (index + 1) % 2 === 0;
+          const eventEl = document.createElement('div');
+          eventEl.className = 'timeline-event';
+          eventEl.id = `event-${event.id}`;
+          eventEl.style.left = `${event.x}%`;
+          eventEl.style.top = isTopPosition ? '15%' : '65%';
+          
+          eventEl.innerHTML = `
+            <div class="event-connector ${isTopPosition ? 'top' : 'bottom'}"></div>
+            <div class="event-card">
+              <p class="event-date">${event.date}</p>
+              <p class="event-description">${event.description}</p>
             </div>
-
-            <div class="addresses">
-                <div class="address">
-                    <h3>TELANGANA ADDRESS</h3>
-                    <p>
-                        Telangana : 1-4/7,Road No - 2, Ex Service Men Colony, Balaji Nagar,<br>
-                        Jawahar Nagar Municipal Corporation, Kapra Mandal, Medchal District<br>
-                        Secunderabad - 500087.
-                    </p>
-                    <p>
-                        Email: <a href="mailto:arunodayatrust2008@gmail.com">arunodayatrust2008@gmail.com</a>,<br>
-                        <a href="mailto:venkat@arunodaya.org">venkat@arunodaya.org</a>
-                    </p>
-                    <p>Landline : 040-27981250, 27981251</p>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.9726882632447!2d78.5559!3d17.4837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9c4a45555555%3A0x55555555555555!2sBalaji%20Nagar%2C%20Kapra%2C%20Secunderabad%2C%20Telangana%20500087!5e0!3m2!1sen!2sin!4v1635835330921!5m2!1sen!2sin"
-                        class="map"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-
-                <div class="address">
-                    <h3>ANDHRA PRADESH ADDRESS</h3>
-                    <p>
-                        Andhra Pradesh : #5-98-50/1, 3rd Floor, Hotel Viceroy Complex,<br>
-                        Main Road Brodipet, Guntur- 522 002.
-                    </p>
-                    <p>Landline : 0863 2236999</p>
-                    <p>Mobile : +91 80969 50550</p>
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.547545371544!2d80.4359!3d16.3037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f227ebf44444%3A0x44444444444444!2sBrodipet%2C%20Guntur%2C%20Andhra%20Pradesh%20522002!5e0!3m2!1sen!2sin!4v1635835330921!5m2!1sen!2sin"
-                        class="map"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script >
-        document.addEventListener('DOMContentLoaded', () => {
-    const newsletterForm = document.getElementById('newsletterForm');
-
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+          `;
+          
+          timelineContent.appendChild(marker);
+          timelineContent.appendChild(eventEl);
+          
+          // Set up intersection observer for event visibility
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  visibleEvents.add(event.id);
+                  document.getElementById(`event-${event.id}`).classList.add('active');
+                }
+              });
+            },
+            {
+              threshold: 0.5,
+              rootMargin: '-10% 0px -10% 0px'
+            }
+          );
+          
+          observer.observe(marker);
+        });
+      }
+      
+      // Set active event
+      function setActiveEvent(eventId) {
+        // Reset previous active marker
+        if (activeEventId) {
+          document.getElementById(`marker-${activeEventId}`).classList.remove('active');
+        }
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        
-        // Here you would typically send this data to your server
-        console.log('Newsletter submission:', { name, email });
-        
-        // Clear the form
-        newsletterForm.reset();
-        
-        // Show success message
-        alert('Thank you for subscribing to our newsletter!');
+        // Set new active marker
+        activeEventId = eventId;
+        document.getElementById(`marker-${activeEventId}`).classList.add('active');
+        document.getElementById(`event-${activeEventId}`).classList.add('active');
+      }
+      
+      // Track horizontal scroll
+      let scrollPosition = 0;
+      timelineContent.addEventListener('scroll', () => {
+        scrollPosition = timelineContent.scrollLeft;
+      });
+      
+      // Initialize the timeline
+      generatePath();
+      createTimelineElements();
+      
+      // Handle window resize
+      window.addEventListener('resize', generatePath);
     });
-});
-    </script>
+  </script>
 </body>
 </html>
