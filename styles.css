@@ -539,85 +539,282 @@ body {
         }
 
         /* Core Team section */
-        .core-team {
-            padding: 50px 20px;
+        #app {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
             text-align: center;
         }
 
-        .team-title {
-            color: #FF6B6B;
-            margin-bottom: 40px;
+        .header h1 {
+            font-size: 3.2em;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--text-color);
         }
 
-        .team-members {
+        .team-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            align-items: center;
+            min-height: 400px;
+            position: relative;
+            margin: 2rem 0;
+            perspective: 1000px;
         }
 
         .team-member {
-            width: 150px;
-            height: 180px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
+            width: 250px;
+            height: 350px;
+            background: var(--card-bg);
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all var(--transition-speed) ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            padding-bottom: 1rem;
         }
 
-        .team-description {
-            max-width: 800px;
-            margin: 0 auto;
-            color: #666;
-            text-align: center;
-        }
-
-        /* Gallery section */
-        .gallery {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .gallery-title {
-            color: #FFA500;
-            margin-bottom: 40px;
-        }
-
-        .gallery-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
-        }
-
-        .gallery-item {
-            background-color: #eee;
+        .team-member img {
             width: 100%;
-            padding-top: 100%; /* 1:1 Aspect Ratio */
-            position: relative;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 1rem;
         }
 
-        .gallery-item.wide {
-            grid-column: span 2;
+        .team-member h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
 
-        .gallery-item.tall {
-            grid-row: span 2;
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
         }
 
-        .view-more-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 8px 15px;
-            background-color: #FF6B6B;
+        .team-member:nth-child(1) {
+            transform: translateX(-100%) scale(0.8);
+            z-index: 1;
+        }
+
+        .team-member:nth-child(2) {
+            transform: translateX(0) scale(1);
+            z-index: 2;
+        }
+
+        .team-member:nth-child(3) {
+            transform: translateX(100%) scale(0.8);
+            z-index: 1;
+        }
+
+        .read-more-btn2 {
+            position: absolute;
+            bottom: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 25px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .read-more-btn2:hover {
+            transform: translateX(-50%) scale(1.05);
+            background-color: var(--accent-color);
+        }
+
+        .text-section {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            padding: 1rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            
+
+            .team-member {
+                width: 220px;
+                height: 320px;
+            }
+
+            .team-member img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .team-member {
+                width: 180px;
+                height: 280px;
+            }
+
+            .team-member img {
+                height: 180px;
+            }
+
+            .team-member h3 {
+                font-size: 1rem;
+            }
+
+            .team-member p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .team-container {
+                min-height: 300px;
+            }
+
+            .team-member {
+                width: 150px;
+                height: 240px;
+            }
+
+            .team-member img {
+                height: 150px;
+            }
+
+            .team-member:nth-child(1) {
+                transform: translateX(-80%) scale(0.8);
+            }
+
+            .team-member:nth-child(3) {
+                transform: translateX(80%) scale(0.8);
+            }
+
+            .text-section {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Gallery section */
+        .at-red {
+            color: #ff6363;
+        }
+  
+        .gallery-container {
+            width: min(700px, 100%);
+            height: 638px;
+            margin: auto;
+            display: grid;
+            position: relative;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+  
+        .gallery img {
+            position: absolute;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+  
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+  
+        /* Setting exact positions for each box */
+        .item1 { width: 271px; height: 235px; top: 25px; left: 30px; }
+        .item2 { width: 154px; height: 144px; top: 25px; left: 327px; }
+        .item3 { width: 154px; height: 144px; top: 25px; left: 507px; }
+        .item4 { width: 271px; height: 147px; top: 291px; left: 30px; }
+        .item5 { width: 334px; height: 235px; top: 203px; left: 327px; }
+        .item6 { width: 154px; height: 144px; top: 469px; left: 30px; }
+        .item7 { width: 154px; height: 144px; top: 469px; left: 211px; }
+        .item8 { width: 271px; height: 144px; top: 469px; left: 390px; }
+  
+        .read-more-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: #ff6363;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+  
+        .read-more-btn:hover {
+            background: #d14d4d;
+        }
+  
+        /* Tablet Layout */
+        @media (max-width: 768px) {
+            .gallery-container {
+                height: auto;
+                padding: 15px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+  
+            .gallery {
+                position: relative;
+                display: contents;
+            }
+  
+            .gallery img {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                top: auto;
+                left: auto;
+            }
+  
+            .item1, .item4, .item5, .item8 {
+                grid-column: span 2;
+            }
+        }
+  
+        /* Mobile Layout */
+        @media (max-width: 480px) {
+            body {
+                padding: 30px 15px;
+            }
+  
+            .gallery-container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+                gap: 10px;
+            }
+  
+            .gallery img {
+                height: 250px;
+            }
+  
+            .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
+                grid-column: span 1;
+            }
+  
+            .read-more-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+                width: 80%;
+                max-width: 200px;
+            }
         }
 
         /* CSR Partners section */
