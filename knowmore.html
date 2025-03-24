@@ -208,7 +208,7 @@
         }
         
         .certificate-img {
-            background-color: #eaeaea;
+            
             height: 100px;
             display: flex;
             justify-content: center;
@@ -251,7 +251,7 @@
         }
         
         .placeholder-image {
-            background-color: #f0f0f0;
+            
             height: 200px;
             display: flex;
             align-items: center;
@@ -476,6 +476,53 @@
 .see-more-button:hover {
     background-color: #FF5A5A; /* Slightly darker pink on hover */
 }
+.image-container {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  margin: auto;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional for rounded corners */
+}
+.covid-section {
+    padding: 3rem 0;
+}
+
+.covid-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.image-card {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
 
     
     </style>
@@ -502,9 +549,10 @@
  <nav class="navbar navbar-expand-lg bg-white">
     <div class="container">
         <div class="logo-section">
-            <img src="https://placehold.co/50x50" alt="Arunodaya Trust Logo" class="logo">
+            <img src="https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742640932/Screenshot_2025-03-22_162442_ylhfjn.png" alt="Arunodaya Trust Logo" class="logo">
             <h1 class="fs-4 mb-0">Arunodaya Trust</h1>
         </div>
+        
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -554,8 +602,8 @@
 
                 </div>
                 <div class="col-lg-6 order-sm-1">
-                    <div class="placeholder-image">
-                        IMAGE
+                    <div class="image-container">
+                        <img src = "https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634494/13ba088cecb28a1fae02c50a0144c24d_dak6sz.jpg" alt="Placeholder Image class = "img"">
                     </div>
                 </div>
             </div>
@@ -566,8 +614,9 @@
             <h2 class="section-title">ORGANIZATIONAL BELIEFS</h2>
             <div class="row">
                 <div class="col-lg-6 order-lg-1 order-2 mt-4 mt-lg-0 order-sm-1 ">
-                    <div class="placeholder-image">
-                        IMAGE
+
+                    <div class="image-container">
+                        <img src = "https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634494/13ba088cecb28a1fae02c50a0144c24d_dak6sz.jpg" alt="Placeholder Image class = "img"">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2 order-1 order-sm-2  ">
@@ -632,57 +681,43 @@
       
             
             <!-- Certificates section -->
-            <div class="mobile-section">
-                <h2 class="section-heading-mobile">CERTIFICATES</h2>
-                <div class="row g-2">
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+           
+            <section class="covid-section">
+                <h2>Certificates</h2>
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/klrahul-img1.png " alt="COVID-19 Initiative 1">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 2">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 3">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 4">
                     </div>
+                    
                 </div>
-            </div>
-            <div class="mobile-section">
-                <h2 class="section-heading-mobile">Documents</h2>
-                <div class="row g-2">
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+            </section>
+            <section class="covid-section">
+                <h2>Documents</h2>
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/klrahul-img1.png " alt="COVID-19 Initiative 1">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 2">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 3">
                     </div>
-                    <div class="col-6">
-                        <div class="mobile-certificate-img">
-                            <span>IMAGE</span>
-                        </div>
+                    <div class="image-card">
+                        <img src="https://placehold.co/300x200" alt="COVID-19 Initiative 4">
                     </div>
+                    
                 </div>
-            </div>
-        </div>
+            </section>
         <div class = "text-center">
         <button class="see-more-button">SEE MORE</button></div>
 

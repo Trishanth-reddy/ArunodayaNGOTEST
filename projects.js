@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Health Projects
         'care-support-1': {
             title: 'HIV & Nutrition ',
-            image: 'https://th.bing.com/th/id/R.aeced419dc05b697f7d987c71096871c?rik=2YhvdlEZllSIpg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fe%2f2%2f0%2f52558.jpg&ehk=s%2bZr67xJO8OOT76WJLCjv3s8h0tIrgBdsVIpYOlkIkE%3d&risl=&pid=ImgRaw&r=0',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634495/3_gmdibh.webp',
             
             p1: 'HIV and malnutrition are interlinked—poor nutrition worsens HIV, and HIV speeds up malnutrition. People with HIV need a balanced diet, higher calorie intake, and often a multivitamin. Arunodaya Trust focuses on accountability, transparency, and community feedback in its programs. Nutritional Support Nutritional assessment and counseling are vital for HIV care, offering tailored advice on healthy eating, weight management, and managing side effects from treatment.',
             title1: "Nutrition support for HIV/AIDS infected Children : ",
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'care-support-2': {
             title: 'REPRODUCTIVE AND CHILD HEALTH PROGRAMMING :',
-            image: 'health-camp.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634494/0baf8bc6414905994c28607a79ad7461_udw3sv.jpg',
             title1:'',
             
             p1: `The National Family Planning Programme was launched in India post-independence 
@@ -68,7 +68,7 @@ health care.`,
         },
         'care-support-3': {
             title: 'MEDICAL CAMPS : ',
-            image: 'mental-health.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634503/9159076cef15f38790edc57e1081193a_gbjz2d.jpg',
             title1: "",
             p1: 'The Arunodaya Trust organizes free medical camps year-round in the slums of Rangareddy District. These camps serve around 2000 people in the villages,mostly the elderly and children, as many young people have migrated to cities for jobs. There are limited medical facilities, with absent doctors and poorly equipped centers, forcing locals to seek unqualified medical practitioners or travel far for care. ',
             ul: `<h4 style="margin-top: 20px;">Key Contributors:</h4>
@@ -101,7 +101,7 @@ health care.`,
         },
         'care-support-4': {
             title: 'HEALTH AND HYGIENE :  ',
-            image: 'nutrition.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634501/8da29ae09fff19e8271a3a40c0fe6421_rqbkmp.jpg',
             title1:"",
             p1: `ARUNODAYA TRUST addresses poor sanitation and hygiene in rural areas, 
 focusing on preventive care and health awareness like reproductive health, 
@@ -115,7 +115,7 @@ ambulance service. Help us ensure better health for the underprivileged!`,
         },
         'care-support-5': {
             title: 'ALCOHOL AND DRUG ABUSE : ',
-            image: 'elder-care.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634495/2_r2dpgn.tiff',
             title1: "",
             p1: `Teen drug and alcohol abuse is common and can have serious consequences. 
 In the 15-24 age group, 50% of deaths (accidents, homicides, suicides) involve 
@@ -155,7 +155,7 @@ making quitting especially challenging, particularly for teens and frequent user
         },
         'care-support-7': {
             title: 'TB & Malaria Prevention',
-            image: 'disease-prevention.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634496/4b46ee69c7f2b7cecf402bcbc91eb08e_uzcyxr.jpg',
             title1:"",
             p1: ` 
 Urban environments, especially among the poor, pose significant public health 
@@ -166,7 +166,7 @@ those at high risk receive the care they need`,
         },
         'care-support-8': {
             title: 'WORLD AIDS DAY :',
-            image: 'eye-care.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634493/1_tknwxr.webp',
             title1:"",
             p1: `Getting to ZERO 
 The global aim is zero new infections, zero AIDS-related deaths, and zero 
@@ -186,7 +186,7 @@ ending the epidemic.`,
         // Education Projects
         'education-1': {
             title: 'Education Support Program :',
-            image: 'education-support.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634494/13ba088cecb28a1fae02c50a0144c24d_dak6sz.jpg',
             title1:"",
             p1: `Arunodaya Trust's Mission Education, part of Smile Foundation's national initiative, aims 
 to provide basic education and healthcare to underprivileged children in Shamirpet, 
@@ -199,7 +199,7 @@ non-formal, remedial, and bridge courses for children aged 3-18.`,
         },
         'education-2': {
             title: 'BECAUSE I AM A GIRL PROGRAM : ',
-            image: 'school-improvement.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634504/b7e1a006b2be9dda05184824091e42ab_v2abzk.jpg',
             title1: "",
             p1: `Girls in the poorest regions face significant disadvantages—denied education, 
 malnourished, and living in poverty—simply due to their gender. Yet, investing in girls 
@@ -311,7 +311,7 @@ more agricultural laborers using treated water at work.</li>
         // Social Causes
         'social-1': {
             title: 'ORPHAN :  ',
-            image: 'community-development.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634506/IMG_20241126_184602_lobvxt.webp',
             
             title1:"",
             p1: "Not Alone is Arunodaya Trust's flagship program, empowering nearly 42 children across  Telangana, with 20 enrolled in 2016 alone. The program focuses on enhancing children's  academic achievements, building well-rounded personalities, and fostering volunteerism,  helping fatherless children break the cycle of poverty. Through home visits, life-skills workshops,  and community activities, the staff forge long-term relationships with the children they serve.",
@@ -319,14 +319,14 @@ more agricultural laborers using treated water at work.</li>
         },
         'social-2': {
             title: 'Nourishment for the Homeless : ',
-            image: 'women-empowerment.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634512/old_Age_Home_zq4skc.webp',
             title1:"",
             p1: 'Hunger affects one in eight women, men, and children worldwide, with nearly a billion young people projected to face poverty by 2025 due to hunger and malnutrition. It remains the leading cause of death globally, with 820 million people suffering from chronic hunger. ',
             p2: 'In response, Arunodaya Trust conducted 72 poor feeding programs throughout the year across 22 slums in Hyderabad and Secunderabad, aiming to alleviate hunger and provide vital nourishment to those in need.'
         },
         'social-3': {
             title: 'AFTER SCHOOL EDUCATION AND FEEDING:',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634505/IMG_20241126_184555_sckabp.webp',
             title1:"",
             p1: `We aim to bring hope to children and families by providing nourishment and education 
 while sharing God's love. Many children in our care come from neglected or abusive 
