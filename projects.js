@@ -115,7 +115,7 @@ ambulance service. Help us ensure better health for the underprivileged!`,
         },
         'care-support-5': {
             title: 'ALCOHOL AND DRUG ABUSE : ',
-            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634495/2_r2dpgn.tiff',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874903/WhatsApp_Image_2025-03-24_at_21.26.06_1285b82e_kvjnor.jpg',
             title1: "",
             p1: `Teen drug and alcohol abuse is common and can have serious consequences. 
 In the 15-24 age group, 50% of deaths (accidents, homicides, suicides) involve 
@@ -141,7 +141,7 @@ problems.</p>`
         },
         'care-support-6': {
             title: 'TOBACCO ABUSE :',
-            image: '',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874904/WhatsApp_Image_2025-03-24_at_21.32.52_65bbf6af_n4npng.jpg',
             title1:"",
             p1: `Tobacco smoking is a major cause of respiratory and cardiovascular diseases, 
 with 90% of lung cancer and peripheral vascular disease cases linked to 
@@ -216,7 +216,7 @@ lifting themselves and others out of poverty.`,
         },
         'education-3': {
             title: 'RIGHT TO EDUCATION AWARENESS PROGRAM : ',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874903/WhatsApp_Image_2025-03-24_at_21.33.58_dfe567e7_xxvjp3.jpg',
             title1:"",
             p1: `Education is vital for a country's development, and India's Right to Education Act (RTE) 
 of 2009 guarantees free, compulsory education for children aged 6 to 14 under Article 
@@ -229,7 +229,7 @@ Awareness of government schemes for girls also remains low. `,
         },
         'education-4': {
             title: 'WATER, SANITATION, HEALTH AND HYGIENE IN SCHOOLS : ',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874903/WhatsApp_Image_2025-03-24_at_21.35.51_88c641de_hb1td9.jpg',
             title1:"",
             p1: `The WASH (Water, Sanitation, and Hygiene) in Schools program aims to improve 
 children's health and learning by reducing water and sanitation-related diseases. By 
@@ -245,7 +245,7 @@ and lifelong hygiene habits for healthier communities.`,
         },
         'education-5': {
             title: 'AASHIRVAD FEEDING PROGRAM :',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634505/IMG_20241126_184555_sckabp.webp',
             title1:"",
             p1: `Remedial programs aim to close the gap between a student’s current knowledge and 
 expected skills, focusing on reading or math. Many students, such as the 65% of fourth 
@@ -259,7 +259,7 @@ support children in need`,
         },
         'education-6': {
             title: 'ENVIRONMENT ASSESSMENT PROGRAM :',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634494/0_7_zuemb0.jpg',
             title1: "",
             p1: `ARUNODAYA TRUST prioritizes sustainability and profitability in agriculture, recognizing 
 it as the essential profession that feeds the nation. Partnering with the Deccan 
@@ -277,7 +277,7 @@ Environment & Forest.`,
         },
         'education-7': {
             title: 'PROVISION OF SAFE DRINKING WATER : ',
-            image: 'scholarship.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874902/WhatsApp_Image_2025-03-24_at_21.34.38_2332f56a_cpdqje.jpg',
             title1: "",
             p1: `Rural areas face severe drinking water issues due to depleting groundwater, pollution 
 from chemical fertilizers, and unhygienic water handling practices, leading to various 
@@ -306,8 +306,7 @@ and promoting water-health awareness in the villages.`,
 more agricultural laborers using treated water at work.</li>
             </ul>`
         },
-        'education-8': {
-                        },
+       
         // Social Causes
         'social-1': {
             title: 'ORPHAN :  ',
@@ -345,7 +344,7 @@ joining our feeding center, easing his family's struggles.`
         // Livelihoods
         'livelihoods-1': {
             title: 'SMILE TWIN E LEARNING PROGRAM :',
-            image: 'vocational-training.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634503/966dea78f1cfd7a4204b96bee348db10_as3frw.jpg',
             title1: "",
             p1: `Since 2008, Arunodaya Trust has been working in Balaji Nagar, Jawahar Nagar, Ranga 
 Reddy District, supporting 1.5 lakh people, primarily living below the poverty line. The 
@@ -362,7 +361,7 @@ conditions.`,
         },
         'livelihoods-2': {
             title: 'AGRICULTURE AND NATURAL RESOURCE MANAGEMENT : ',
-            image: 'microenterprise.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874904/WhatsApp_Image_2025-03-24_at_21.37.49_293cdad3_tfrzke.jpg',
             title1:"",
             p1: `Arunodaya Trust operates in rainfed ecosystems, which provide food and 
 employment to over 60% of India’s population. The agricultural sector has faced 
@@ -377,7 +376,7 @@ particularly in dryland agriculture.
         },
         'livelihoods-3': {
             title: 'REBUILDING LIVELIHOODS OF VICTIMS OF SEXUAL EXPLOITATION AND TRAFFICKING :',
-            image: 'sustainable-agriculture.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634495/42178b463d8b959e0b6e1ce09a80e53d_v2g86q.jpg',
             title1: "",
             p1: `Core activities of this project include:`,
             ul: `<ul style="list-style-type: disc; padding-left: 20px;">
@@ -401,7 +400,7 @@ helping rebuild their livelihoods.`,
         },
         'livelihoods-4': {
             title: 'VOCATIONAL TRAINING : ',
-            image: 'sustainable-agriculture.jpg',
+            image: 'https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634500/8248e714805009003c7d6d85fc6c0f58_yi9r9r.jpg',
             title1:"",
             p1: `Since 2008, ARUNODAYA TRUST has been empowering youth through 
 vocational training in trades such as Motor Rewinding, Medical Lab 
@@ -415,7 +414,7 @@ p2 : "",
         },
         'livelihoods-5': {
             title: 'WOMEN EMPOWERMENT : ',
-            image: 'sustainable-agriculture.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874903/6779_tjkncd.avif',
             title1:"",
             p1: ` In India, despite past claims of gender equality, women have long been 
 treated as second-class citizens. Modern India still grapples with harmful 
@@ -429,7 +428,7 @@ despite progress in other areas`,
         },
         'livelihoods-6': {
             title: 'WOMEN ENTREPRENEURSHIP :  ',
-            image: 'sustainable-agriculture.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874904/WhatsApp_Image_2025-03-24_at_21.37.08_dd8b0ea3_qrzrqy.jpg',
             title1:"",
             p1: `Women entrepreneurship is a key driver of economic growth, creating jobs 
 and offering innovative solutions. However, women still face barriers like 
@@ -444,7 +443,7 @@ p2 : "",
         },
         'livelihoods-7': {
             title: 'YOUTH WELFARE PROGRAM : ',
-            image: 'sustainable-agriculture.jpg',
+            image: 'https://res.cloudinary.com/dfthj0xyu/image/upload/v1742874903/WhatsApp_Image_2025-03-24_at_21.39.28_d143690e_vileyq.jpg',
             title1:"",
             p1 : `Youth play a vital role in promoting social awareness and socio-economic 
 change. To harness this potential, Empowerment launched Youth Welfare 

@@ -318,6 +318,46 @@
             color: #666;
             margin-top: 10px;
         }
+        .image-grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-card {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-image-placeholder {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin-bottom: 15px;
+}
+
+.profile-image-placeholder img {
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}
+
   
 
     </style>
@@ -384,36 +424,81 @@
     <!-- Main Content (sample) -->
     <div class="container mt-4">
         <div class="row">
+            
             <div class="col-md-8 mx-auto text-center">
-                <img src="https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634514/Ranjan_btveii.jpg" 
-     srcset="image-800.jpg 800w, image-400.jpg 400w" 
-     sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px" 
-     alt="Responsive Image">
-
-                
-                <h3>Ranjan Babu</h3>
-                <p class="text-muted">Trustee & Chief Administration Officer</p>
-                
-                <div class="text-start mt-4">
-                    <div>
-                        <p class="mb-4"><span class="quote-symbol">❝</span>In our foreword we pointed out the grey areas and lapses, thereby highlighting the core areas of 
-                            focus for the future. 
-                            We've made progress in health, sanitation, and livelihoods, but challenges remain in 
-                            vaccination, education, and immunization. Initial misconceptions hindered vaccination, 
-                            but responses are improving, and we'll continue until all are covered. The pandemic 
-                            disrupted education, reviving issues like child labor and early marriage, which we are 
-                            committed to addressing. Immunization schedules were affected, and livelihoods need 
-                            improvement to reduce migration. With our partners' support, we are dedicated to 
-                            overcoming these challenges and building stronger communities. </p>
+                <div class="image-grid">
+                    <div class="image-card">
                         
-                       
+                        <img src="https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634515/WhatsApp_Image_2025-03-06_at_18.11.06_c4a07a68_gwaedh.jpg" alt="View Annual Report">
+    
+                    </div>
+                    </div>
+    
+                    
+                    <h3>Khagga Venkat Rao </h3>
+                    <p class="text-muted">Founder & Managing Trustee</p>
+                    
+                    <div class="text-start mt-4">
+                        <div>
+                            <p class="mb-4"><span class="quote-symbol">❝</span>I am VenkataRao B.F.A.(Bachelor of Fine Arts) Graduate from J.N.T.U., Hyderabad. I am                   
+                                from a rural village at Guntur, A.P., and India  
+                                </p>
+                                
+<p>Arunodaya Trust has worked with marginalized communities for over three decades. 
+Despite the challenges of the past year, including the pandemic, we provided crisis relief, 
+Covid awareness, and initiated livelihood activities like cash-for-work and income 
+generation. Our vaccination efforts were strong, supported by teams like 
+MELUKOLUPU, SHGs, and VDS. Though setbacks in education and capacity building 
+have been a challenge, we're determined to do more for children and youth. We are 
+grateful for the global support and solidarity, reinforcing our shared belief in humanity. 
+Thank you to all who supported us.</p>
+                            
+                           
+                        </div>
                     </div>
                 </div>
-            </div>
+
+
+
+
+
+
+
+
             <div class="col-md-8 mx-auto text-center">
-                <div class="bg-light p-4 mb-4">
-                    <h2>IMAGE</h2>
+                <div class="image-grid">
+                    <div class="image-card">
+                        
+                        <img src="https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634514/Ranjan_btveii.jpg" alt="View Annual Report">
+    
+                    </div>
+                    </div>
+    
+                    
+                    <h3>Ranjan Babu</h3>
+                    <p class="text-muted">Trustee & Chief Administration Officer</p>
+                    
+                    <div class="text-start mt-4">
+                        <div>
+                            <p class="mb-4"><span class="quote-symbol">❝</span>In our foreword we pointed out the grey areas and lapses, thereby highlighting the core areas of 
+                                focus for the future. </p>
+                                
+                            <p>We've made progress in health, sanitation, and livelihoods, but challenges remain in 
+                                vaccination, education, and immunization. Initial misconceptions hindered vaccination, 
+                                but responses are improving, and we'll continue until all are covered. The pandemic 
+                                disrupted education, reviving issues like child labor and early marriage, which we are 
+                                committed to addressing. Immunization schedules were affected, and livelihoods need 
+                                improvement to reduce migration. With our partners' support, we are dedicated to 
+                                overcoming these challenges and building stronger communities.</p>
+                           
+                        </div>
+                    </div>
                 </div>
+            <div class="col-md-8 mx-auto text-center">
+                <div class="profile-image-placeholder">
+                    <img src="https://res.cloudinary.com/dxnlxrkmg/image/upload/v1742634512/NAGARATHNAM_cjbukg.jpg" alt="Profile" class="image-card">
+                </div>
+                        
                 
                 <h3>B. Naga Ratnam</h3>
                 <p class="text-muted">Chief Advisor</p>
@@ -428,26 +513,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 mx-auto text-center">
-                <div class="bg-light p-4 mb-4">
-                    <h2>IMAGE</h2>
-                </div>
-                
-                <h3>Bhavana Kumari</h3>
-                <p class="text-muted"> Executive Director</p>
-                
-                <div class="text-start mt-4">
-                    <div>
-                        <p class="mb-4"><span class="quote-symbol">❝</span>Ms. Bhavana Kumari, a key member of Arunodaya Trust since 2018, oversees our mission in 
-                            North America and North-Western India. She focuses on securing funds through donations and 
-                            collaborations for key projects, including orphanage support, health missions, education, women 
-                            empowerment, and social causes.</p>
-                        
-                      
-                    </div>
-                </div>
-            </div>
-        </div>
+            
+               
+                    
     </div>
     <!-- Newsletter Section -->
     <div class="nl-container">
